@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <title>Teste técnico - Projeto Hidrocarboneto</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <!--
+        <script>
+            function includeHTML() {
+              var z, i, elmnt, file, xhttp;
+              /* Loop through a collection of all HTML elements: */
+              z = document.getElementsByTagName("*");
+              for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("include-map");
+                if (file) {
+                  /* Make an HTTP request using the attribute value as the file name: */
+                  xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4) {
+                      if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                      if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                      /* Remove the attribute, and call this function once more: */
+                      elmnt.removeAttribute("include-map");
+                      includeHTML();
+                    }
+                  }
+                  xhttp.open("GET", file, true);
+                  xhttp.send();
+                  /* Exit the function: */
+                  return;
+                }
+              }
+            }
+        </script>
+        //-->
+    </head>
+    <body>
+        <div class="cn_topo">
+            <div class="titulo">Seja bem-vindo ao mapa interativo!</div>
+            <div class="subtitulo">
+                Este projeto faz parte do processo seletivo organizado pelo 
+                Instituto Hidrocarboneto para a vaga de programador bolsista.
+            </div>
+        </div>
+
+        <!--div include-map="map.html"-->
+        <section class="fundo_home">
+            <div class="cn_home_texto">
+                O mapa ao lado apresenta o nível de poluição por fósforo de alguns corpos d'água pelo Brasil.
+                <br/><br/>Você pode clicar nos pontos para exibir o corpo d'água em questão e o seu nível de fósforo medido.
+                <br/><br/>Você também pode arrastar e dar zoom no mapa para visualizar outras regiões.
+                <br/><br/><br/>
+                <a class="home_btn" href="map.html">
+                    Veja o mapa em tela cheia!
+                </a>
+            </div>
+            <div class="cn_mapa">
+                <object class="mapa" data="map.html">
+                    Seu navegador não suporta a tag object.
+                </object>
+            </div>
+        </section>
+        <div class="thanks">
+            Obrigado pela visita!
+        </div>
+
+        <!--
+            center: [-8.6468, -41.7742],
+        <script>
+            includeHTML();
+        </script>
+        //-->
+
+        <div class="module_divider">
+            <img src="Imagens/cleaning-maintenance-DividerLine.png" />
+        </div>
+
+        <div class="sub_rodape">
+            <table>
+                <td>Desenvolvido por Daniel Moreira - 2020.</td>
+            </table>
+        </div>
+    </body>
+</html>
+

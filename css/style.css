@@ -1,0 +1,754 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: 'Lato', sans-serif;
+	line-height: 1.5;
+	font-size: 100%;
+	background-color: #F3FFF7;
+	--bg-verde: #196f97;
+}
+
+.cn_topo, 
+.cn_menu, 
+.cn_propaganda ul, 
+.conteudo, 
+.rodape {
+	padding-left:10%;
+	padding-right:10%;
+	margin:0;
+	zoom:1;
+}
+
+/* ---- Inicio do cabecalho ---- */
+
+/* container do topo */
+.cn_topo {
+	background:linear-gradient(
+		45deg,
+		#FFF 0%,
+		#E7FEF3 50%,
+		#A9FAD3 100%
+		);
+	height:116px;
+	position:relative;
+	display:block;
+	padding-top:17px;
+	padding-bottom:17px;
+	border-bottom:4px solid #FFF;
+}
+
+.cn_topo .titulo {
+    padding-left:17px;
+    font-size:250%;
+    display:inline-block;
+}
+
+.cn_topo .subtitulo {
+    padding-left:17px;
+    font-size:120%;
+    display:inline-block;
+}
+
+/* container do logo */
+.cn_topo .cn_logo {        
+	float: left;
+	width: 320px;
+	height: 137px;
+	position: relative;
+	margin: 0 0 0 26px;
+}
+
+/* span agindo como container (inline-block) do logo, dentro do a href */
+.cn_topo .cn_logo .bn_logo .logo {   
+	background: url(../Imagens/assinatura_horizontal_cor_completa2.svg);
+	width: 320px;
+	height: 137px;
+	display: inline-block;
+}
+
+.cn_topo .cn_logo_ex {
+	float: left;
+	width: auto;
+	height: 137px;
+	position: relative;
+	margin: 0 0 0 25px;
+	font-weight: 600;    /*alteracoes de texto... */
+	line-height: 1.3;
+	font-size: 21px;
+	color: #000;
+	letter-spacing: 1px;
+	transform: scale(1,0.95); /* W3C */  /* altura da letra*/
+	-webkit-transform: scale(1,0.95); /* Safari and Chrome */
+	-moz-transform: scale(1,0.95); /* Firefox */
+	-ms-transform: scale(1,0.95); /* IE 9 */
+	-o-transform: scale(1,0.95); /* Opera */
+}
+
+/* para deixar alguns elementos na frente*/
+.cn_topo .frente {
+	z-index: 2;         
+}
+
+/* degrade branco do topo */
+.cn_topo .topo_fundo {  
+	background: linear-gradient(to right,
+		rgba(255,255,255,1) 0px,
+		rgba(255,255,255,1) 580px,
+		rgba(255,0,0,0) 700px,
+		rgba(255,0,0,0) 100%
+		);
+	width: 1000px;
+	height: 151px;
+	margin: auto;
+	padding: 12px 0 12px 0;
+	position: absolute;   /* para forcar ele a ficar no canto atras com o top e left*/
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+/*Inicio slide*/
+
+/*container do slide*/
+.cn_topo .cn_slideshow {   
+	float: right;
+	width: 420px;
+	height: 175px;
+	margin: -12px 0 auto auto;  /*negativo para corrigir o padding do container topo, zero pq estava dando erro*/
+	position: relative;
+	overflow: hidden;
+	display: block;
+	z-index: 0;
+}
+
+/*container para o loop de cada foto*/
+.cn_topo .cn_slideshow .cn_foto {
+	animation: round 17.5s infinite;
+	opacity: 0;
+	position: absolute;
+	top: 50%;             
+	left: 50%;
+}
+
+/*foto propriamente dita*/
+.foto {
+	height: auto;
+	width: 100%;
+}
+
+.f1 {                    /*cada imagem tem uma posicao e zoom diferente*/
+	margin-top: -50%;     /* menos 0   -50%   -100% mais */
+	margin-left: -60%;    /* zoom in:  afastar left-right (aumentar diferenca)*/
+	margin-right: -10%;
+}
+
+.f2 {
+	margin-top: -40%;
+	margin-left: -60%;
+	margin-right: -20%;
+}
+
+.f3 {
+	margin-top: -75%;
+	margin-left: -80%;
+	margin-right: 0%;
+}
+
+.f4 {
+	margin-top: -80%;
+	margin-left: -60%;
+	margin-right: -20%;
+}
+
+.f5 {
+	margin-top: -35%;
+	margin-left: -60%;
+	margin-right: -20%;
+}
+
+/*para transitar entre fotos*/
+@keyframes round {   
+	25% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 0;
+	}
+}
+
+/*momento de entrada de cada foto, associado ao container de loop*/
+.cn_topo .cn_slideshow .cn_foto:nth-child(1) {
+	animation-delay: 0s;
+}
+
+.cn_topo .cn_slideshow .cn_foto:nth-child(2) {
+	animation-delay: 3.5s;
+}
+
+.cn_topo .cn_slideshow .cn_foto:nth-child(3) {
+	animation-delay: 7s;
+}
+
+.cn_topo .cn_slideshow .cn_foto:nth-child(4) {
+	animation-delay: 10.5s;
+}
+
+.cn_topo .cn_slideshow .cn_foto:nth-child(5) {
+	animation-delay: 14s;
+}
+
+/*Fim slide*/
+
+.linha_menu_sup {
+	width: var(--wd-padrao);
+	height: 1px;
+	background-color: var(--bg-verde);
+	margin: auto;
+}
+
+.cn_menu {
+	background-position: 0px 0px;   /* posicionar o gradiente branco verde certo */
+	background: linear-gradient(to right,
+		#FFF 0px,
+		#FFF 190px,
+		var(--bg-verde) 280px,
+		var(--bg-verde) 100%
+		);
+	width: var(--wd-padrao);
+	height: 30px;
+	margin: auto;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;  /*para separar os containers rede e botoes ul li */
+}
+
+/*container soh pros botoes de redes sociais*/
+.cn_menu .cn_redes {  
+	float: left;
+	width: 172px;
+	height: 24px;
+	margin: 0 0 0 15px;
+	position: relative;
+}
+
+/*estilos para todos os botoes*/
+.cn_menu .cn_redes .redes {  
+	float: left;
+	width: 24px;
+	height: 24px;
+	position: relative;
+	margin: 0 10px 0 0;
+}
+
+/*span proprios para cada logo de rede social dentro de a href, semelhante ao logo principal lah em cima*/
+.cn_menu .cn_redes .facebook {
+	background: url(../Imagens/facebook-icone-icon.svg);
+}
+
+.cn_menu .cn_redes .twitter {
+	background: url(../Imagens/twitter.svg);
+}
+
+.cn_menu .cn_redes .linkedin {
+	background: url(../Imagens/linkedin-logo-copy.svg);
+}
+
+.cn_menu .cn_redes .instagram {
+	background: url(../Imagens/insta.svg);
+}
+
+.cn_menu .cn_redes .youtube {
+	background: url(../Imagens/Youtube_41206.svg);
+}
+
+/*links para as outras pags em unordered list*/
+.cn_menu ul {    
+	float: left;
+	width: auto;
+	height: auto;
+	margin: 0 30px 0 0;
+	list-style-type: none;
+}
+
+.cn_menu ul li {
+	float: left;
+	display: inline-block;      /*para listar lado a lado*/
+	padding: 0 0 0 28px;        /*espaco entre cada link*/
+}
+
+/*para corrigir erro no efeito do botao com img de setinha*/
+.cn_menu ul li a {
+	float: left;
+}
+
+/*efeito de botao*/
+.cn_menu ul li .menu-button {  
+	transition-duration: 0.3s;
+	padding: 1px 15px;
+	border-radius: 5px;
+	background-color: var(--bg-verde);
+	color: #FFF;
+	text-decoration: none;
+}
+
+/*nao sei*/
+.cn_menu ul li .dropdown {
+	display: inline-block;
+}
+
+/*estilo do botao do dropdown*/
+.cn_menu ul li .dropdown .menu-dropbtn {   
+	cursor: pointer;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+/*efeito de botao:  ao passar o mouse nos botoes normais e quando o dropdown estiver aceso*/
+.cn_menu ul li .menu-button:hover, .dropdown:hover .menu-dropbtn {    
+	background-color: #034727;
+	cursor: pointer;
+}
+
+/* estilo do conteudo do dropdown menu*/
+.drop_content {   
+	display: none;       /*escondido por padrao*/
+	position: absolute;
+	background-color: var(--bg-verde);
+	min-width: 2px;
+	box-shadow:  0px 8px 16px 0px rgba(0,0,0,0.2);
+	top: 26px;                /*para corrigir o posicionamento, baseado na altura do menu*/
+	z-index: 1;
+}
+
+/*mostrar o dropdown menu quando passa o mouse*/
+.dropdown:hover .drop_content {  
+	display: block;
+}
+
+/*estilo dos links dentro do dropdown menu*/
+.cn_menu ul li .drop_content a {  
+	float: initial;
+	color: #FFF;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+/*muda cores dos links quando passa o mouse*/
+.drop_content a:hover {  
+	background-color: #034727;
+}
+
+.linha_menu_inf {
+	width: var(--wd-padrao);
+	height: 1px;
+	background-color: var(--bg-verde);
+	margin: auto;
+}
+
+/* ---- Fim do cabecalho ---- */
+/* ---- Inicio da Pagina Inicial - Home ---- */
+
+.fundo_home {
+    width: 90%;
+	height: 500px;
+	margin: auto;
+    background-color: var(--fundo-pag);
+    display: flex;
+}
+
+.fundo_home .cn_home_texto {
+	padding: 20px;
+    padding-bottom: 90px;
+    width: 30%;
+    position: relative;
+}
+
+.fundo_home .cn_mapa {
+    width: 70%;
+    height: 90%;
+    position: relative;
+}
+
+.fundo_home .mapa {
+    overflow:hidden;
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.thanks{
+    width: 90%;
+	height: 70px;
+	margin: auto;
+    background-color: var(--fundo-pag);
+    font-size: 110%;
+    text-align: center;
+}
+
+/*botao descubra*/
+.fundo_home .cn_home_texto .home_btn {
+	transition-duration: 0.3s;
+	text-decoration: none;
+	background-color: var(--bg-verde);
+    display: inline;
+    padding: 3px;
+	position: relative;
+	color: white;
+}
+
+.fundo_home .cn_home_texto .home_btn:hover{
+	background-color: #064968;
+}
+
+.fundo_home .cn_home_img {
+	width: 50%;
+	height: 330px;
+	margin: 10px;
+	overflow: hidden;
+}
+
+.fundo_home .cn_home_img img {
+	width: 100%;
+	position: relative;
+	bottom: 0px;
+}
+
+
+
+/* ---- Fim da Pagina Inicial - Home ---- */
+/* ---- Inicio da Pagina Recicladora ---- */
+
+.fundo_recic {
+	width: var(--wd-padrao);
+	margin: auto;
+	background-color: var(--fundo-pag);
+	display: block;
+}
+
+/*para linkar direto ao topico desejado e fundo de imagem*/
+.fundo_recic .cn_recic_escolher {
+	text-decoration: none;
+	/*color: var(--bg-verde);*/
+	color: #B6E090;
+	display: flex;
+	padding: 40px 0 40px 0;
+	justify-content: /*center*/space-between;
+	background-image: url('../Imagens/WhatsApp Image 2018-05-07 at 15.28.10.jpeg');
+	background-position-y:  70%;
+	background-size: cover;
+	margin-top: 5px;
+}
+
+.fundo_recic .cn_recic_escolher ul li {
+	margin: 4px 0;
+}
+
+.fundo_recic .cn_recic_escolher a {
+	text-decoration: none;
+	/*color: var(--bg-verde);*/
+	color: #FFF;
+	text-decoration-line: underline;
+	font-size: 17px;
+}
+
+.fundo_recic .cn_recic_escolher a:hover {
+	color: #FFF;
+	background-color: var(--bg-verde);
+}
+
+/*escolher (sem imagem do fundo) > divs que separam os links do sumario e centralizar com o esquema da porcentagem no width*/
+.fundo_recic .cn_recic_escolher .escolher {
+	height: auto;
+}
+
+.fundo_recic .cn_recic_escolher .escolher .tit {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+/*boxes com links, transparencia no rgba*/
+.fundo_recic .cn_recic_escolher .escolher_1 {
+	width: auto;
+	background-color: rgba(0,0,0,0.70);
+	padding: 15px;
+	margin-left: 15px;
+}
+
+/*com a imagem no fundo, isso nao precisa mais
+.fundo_recic .cn_recic_escolher .escolher_2 {
+	width: 0%;
+	text-align: center;
+}
+*/
+
+.fundo_recic .cn_recic_escolher .escolher_3 {
+	width: auto;
+	background-color: rgba(0,0,0,0.70);
+	padding: 15px;
+	margin-right: 15px;
+}
+
+/*divisoria, com imagem no fundo nao precisa mais
+.fundo_recic .linha_div {
+	height: 1px;
+	weight: 100%;
+	background-color: var(--bg-verde);
+}
+*/
+
+/* margem da linha divisoria e paragrafos */
+.fundo_recic .cn_recic_topic, .linha_div {
+	margin: 0 80px;
+}
+
+/*paragrafos propriamente ditos*/
+.fundo_recic .cn_recic_topic .recic_subtopic {
+	padding-top: 50px;
+}
+
+.fundo_recic .cn_recic_topic .recic_subtopic h1 {
+	color: var(--bg-verde);
+	font-size: 27px;
+}
+
+/* imagens entre os paragrafos */
+.fundo_recic .cn_recic_topic .recic_foto {
+	width: 520px;
+	height: 300px;
+	background-color: #E46363;
+	margin: 40px auto 40px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+}
+
+/*botao voltar*/
+.fundo_recic .cn_recic_topic .voltar a {
+	text-decoration: none;
+	color: var(--bg-verde);
+	text-decoration-line: underline;
+	font-size: 15px;
+}
+
+.fundo_recic .cn_recic_topic .voltar a:hover {
+	color: #FFF;
+	background-color: var(--bg-verde);
+}
+
+/* ---- Fim da Pagina Recicladora ---- */
+/* ---- Inicio da Pagina Pesquisa_Home ---- */
+
+.fundo_pesq_home {
+	width: var(--wd-padrao);
+	height: 400px;
+	background-color: var(--fundo-pag);
+	margin: auto;
+}
+
+.fundo_pesq_home h1 {
+	position: relative;
+	padding: 80px 0 0 80px;
+	color: var(--bg-verde);
+	font-size: 27px;
+}
+
+.fundo_pesq_home .cn_pesq_escolher {
+	width: 300px;
+	height: auto;
+	position: relative;
+	float: left;
+	margin: 40px;
+	margin-left:80px;
+	padding: 20px;
+	border-left: 2px solid var(--bg-verde);
+}
+
+/*linhas dentro do container anterior*/
+.fundo_pesq_home .cn_pesq_escolher ul li {
+	padding: 5px;
+	margin: 1px;
+}
+
+.fundo_pesq_home .cn_pesq_escolher ul li a {
+	text-decoration: none;
+	color: var(--bg-verde);
+	font-size: 20px;
+}
+
+.fundo_pesq_home .cn_pesq_escolher ul li a:hover {
+	background-color: var(--bg-verde);
+	color: #FFF;
+}
+
+/* ---- Fim da Pagina Pesquisa_Home ---- */
+/* ---- Inicio da Pagina Pesq_Linhas de Pesquisa ---- */
+
+.fundo_pesq_pag {
+	width: var(--wd-padrao);
+	background-color: var(--fundo-pag);
+	margin: auto;
+}
+
+/*titulo pesquisa, comanda todo o espacamento com relacao ao menu em linha abaixo*/
+.fundo_pesq_pag h1 {
+	position: relative;
+	padding: 55px 0 15px 0;
+	margin: 0 80px 10px ;
+	color: var(--bg-verde);
+	font-size: 30px;
+	border-bottom: 1px solid var(--bg-verde);
+}
+
+/*menu diferenciado em linha apos clicar em um deles*/
+.fundo_pesq_pag .cn_pesq_escolher_pag {
+	display: flex;
+	justify-content: center;
+}
+
+.fundo_pesq_pag .cn_pesq_escolher_pag ul li {
+	display: inline-block;
+	padding: 0 7px;
+	color: var(--bg-verde);
+	font-size: 19px;
+}
+
+.fundo_pesq_pag .cn_pesq_escolher_pag ul li a {
+	text-decoration: none;
+	color: var(--bg-verde);
+}
+
+.fundo_pesq_pag .cn_pesq_escolher_pag ul li a:hover {
+	color:#FFF;
+	background-color: var(--bg-verde);
+}
+
+.atual {
+	font-weight: 500;
+	font-size: 110%;
+}
+
+/*descricoes propriamente ditas*/
+.fundo_pesq_pag .linhas_pesq {
+	margin: 0 80px;
+	padding: 40px 0;
+}
+
+.fundo_pesq_pag .linhas_pesq p {
+	padding: 15px 0;
+}
+
+.fundo_pesq_pag .linhas_pesq ul {
+	list-style-type: circle;
+	margin-left: 30px;
+}
+
+/* ---- Fim da Pagina Pesq_Linhas de Pesquisa ---- */
+/* ---- Inicio da Pagina Sobre_Contato ---- */
+
+.fundo_sobre_contato {
+	width: var(--wd-padrao);
+	background-color: var(--fundo-pag);
+	margin: auto;
+	display: flex;
+}
+
+.fundo_sobre_contato .mapa {
+	width: 50%;
+	height: 350px;
+	float: left;
+	position: relative;
+	margin: 15px;
+}
+
+.fundo_sobre_contato .cn_sobre_contato {
+	background-color: red;
+	width: 50%;
+	height: 350px;
+	margin: 15px;
+}
+
+/* ---- Fim da Pagina Sobre_Contato ---- */
+/* ---- Inicio Rodape ---- */
+
+.rodape {
+	width: var(--wd-padrao);
+	height: 80px;
+	margin: auto;
+	background-color: var(--bg-verde);
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/*aqui nao tem span porque esta imagem nao leva a um link em a href*/
+.rodape .cn_laweeeda_logo {
+	float: left;
+	background: url(../Imagens/StickerLaWEEEda.svg);
+	width: 212px;
+	height: 56px;
+	margin: 0 0 0 20px;
+	position: relative;
+}
+
+/*aqui eh png direto no a href, tambem nao precisa de span, mas precisa do img abaixo*/
+.rodape .cn_ima_logo {
+	float: left;
+	width: 251px;
+	height: 55px;
+	margin: auto;
+	position: relative;
+}
+
+.rodape .cn_ima_logo img {
+	width: 100%;
+	height: auto;
+}
+
+.rodape .cn_ufrj_logo {
+	float: left;
+	width: 150px;
+	height: 61px;
+	margin: 0 20px 0 0;
+	position: relative;
+}
+
+.rodape .cn_ufrj_logo img {
+	width: 100%;
+	height: auto;
+}
+
+.module_divider {
+	background-color: var(--bg-verde);
+	width: var(--wd-padrao);
+    justify-self: center;
+    height: 1px;
+}
+
+.module_divider img {
+	width: 100%;
+    height: 15px;
+    position: absolute;
+}
+
+/* Fim rodape */
+/* Inicio sub rodape */
+
+.sub_rodape {
+	width: var(--wd-padrao);
+	height: 25px;
+	background-color: var(--bg-verde);
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 12px;
+	padding: 3px 0;
+}
