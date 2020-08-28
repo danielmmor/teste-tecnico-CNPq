@@ -2,8 +2,6 @@ import os
 import folium
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import branca as bc
 
 print('Begin all')
 
